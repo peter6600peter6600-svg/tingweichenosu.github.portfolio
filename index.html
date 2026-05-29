@@ -5,24 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ting-Wei Chen | Chemical Engineering Portfolio</title>
   <style>
-    :root{
-      --navy:#102a43; --blue:#1f4e79; --gold:#d97706; --bg:#f5f7fa;
-      --text:#1f2933; --muted:#52606d; --card:#ffffff;
-    }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-    a{color:var(--blue)}
-    header{background:linear-gradient(135deg,rgba(16,42,67,.96),rgba(31,78,121,.9)),url('soec-tape-casting.jpg') center/cover; color:white; padding:88px 8% 72px;}
-    .hero{max-width:1100px;margin:auto}.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:#fbbf24;font-weight:700;font-size:.85rem}
-    h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;margin:.25rem 0}.subtitle{font-size:1.35rem;margin:.4rem 0}.tagline{color:#dbeafe;max-width:780px;font-size:1.05rem}
-    .buttons{margin-top:28px}.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 20px;margin:6px 8px 6px 0;background:white;color:var(--navy)}.btn.alt{background:var(--gold);color:white}
-    nav{position:sticky;top:0;z-index:10;background:white;box-shadow:0 2px 14px rgba(16,42,67,.12);padding:14px 8%;text-align:center}
-    nav a{text-decoration:none;color:var(--navy);font-weight:700;margin:0 14px;white-space:nowrap}
+    :root{--navy:#102a43;--blue:#1f4e79;--gold:#d97706;--bg:#f5f7fa;--text:#1f2933;--muted:#52606d;--card:#ffffff;}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65} a{color:var(--blue)}
+    header{background:linear-gradient(135deg,rgba(16,42,67,.96),rgba(31,78,121,.9)),url('soec-tape-casting.jpg') center/cover;color:white;padding:88px 8% 72px;}
+    .hero{max-width:1100px;margin:auto}.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:#fbbf24;font-weight:700;font-size:.85rem} h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;margin:.25rem 0}.subtitle{font-size:1.35rem;margin:.4rem 0}.tagline{color:#dbeafe;max-width:830px;font-size:1.05rem}.buttons{margin-top:28px}.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 20px;margin:6px 8px 6px 0;background:white;color:var(--navy)}.btn.alt{background:var(--gold);color:white}
+    nav{position:sticky;top:0;z-index:10;background:white;box-shadow:0 2px 14px rgba(16,42,67,.12);padding:14px 8%;text-align:center} nav a{text-decoration:none;color:var(--navy);font-weight:700;margin:0 14px;white-space:nowrap}
     section{padding:58px 8%;max-width:1250px;margin:auto}.section-title{font-size:2rem;color:var(--navy);margin:0 0 26px}.section-title:after{content:"";display:block;width:92px;border-bottom:4px solid var(--gold);margin-top:8px}
     .card{background:var(--card);border-radius:18px;box-shadow:0 10px 28px rgba(16,42,67,.08);padding:28px;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}.project{background:white;border-radius:18px;box-shadow:0 10px 28px rgba(16,42,67,.08);overflow:hidden;display:flex;flex-direction:column}.project img{width:100%;height:235px;object-fit:cover;background:#e5e7eb}.project .content{padding:24px;display:flex;flex-direction:column;gap:8px;flex:1}.project h3{margin:.2rem 0;color:var(--navy);font-size:1.35rem}.project p{margin:.35rem 0}.small{color:var(--muted);font-size:.95rem}.chips{margin-top:10px}.chip{display:inline-block;background:#e8f1f8;color:#173b57;border-radius:999px;padding:6px 10px;margin:4px;font-size:.9rem;font-weight:700}
-    .workflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}.step{background:white;border-radius:14px;box-shadow:0 6px 18px rgba(16,42,67,.08);overflow:hidden}.step img{width:100%;height:150px;object-fit:cover}.step div{padding:14px;font-weight:700;color:var(--navy)}
-    .skills span{display:inline-block;background:#e2e8f0;color:var(--navy);padding:8px 13px;border-radius:999px;margin:6px;font-weight:700}
-    footer{background:#0b1f33;color:#cbd5e1;text-align:center;padding:34px 8%;margin-top:45px}
+    .workflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}.step{background:white;border-radius:14px;box-shadow:0 6px 18px rgba(16,42,67,.08);overflow:hidden}.step img{width:100%;height:150px;object-fit:cover}.step div{padding:14px;font-weight:700;color:var(--navy)}.skills span{display:inline-block;background:#e2e8f0;color:var(--navy);padding:8px 13px;border-radius:999px;margin:6px;font-weight:700}.coursework{border-left:5px solid var(--gold)}footer{background:#0b1f33;color:#cbd5e1;text-align:center;padding:34px 8%;margin-top:45px}
     @media(max-width:700px){nav a{display:inline-block;margin:5px 8px}section{padding:42px 5%}header{padding:65px 5%}.project img{height:210px}}
   </style>
 </head>
@@ -32,7 +22,7 @@
     <div class="eyebrow">Chemical Engineering Portfolio</div>
     <h1>Ting-Wei Chen</h1>
     <p class="subtitle">Graduate Student in Chemical Engineering | Oregon State University</p>
-    <p class="tagline">Focused on process engineering, transport phenomena, materials research, microreactor modeling, and engineering analysis.</p>
+    <p class="tagline">Focused on porous ceramics, transport phenomena, reaction engineering, computational modeling, and data-driven engineering analysis.</p>
     <div class="buttons">
       <a class="btn alt" href="#projects">View Projects</a>
       <a class="btn" href="Ting-Wei_Chen_Resume.pdf">Download Resume</a>
@@ -41,13 +31,13 @@
   </div>
 </header>
 <nav>
-  <a href="#about">About</a><a href="#projects">Projects</a><a href="#research">Research Highlights</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  <a href="#about">About</a><a href="#projects">Projects</a><a href="#research">SOEC Results</a><a href="#coursework">Coursework</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
 </nav>
 <section id="about">
   <h2 class="section-title">About Me</h2>
   <div class="card">
     <p>Hello, my name is <strong>Ting-Wei Chen</strong>. I am a graduate student in Chemical Engineering at Oregon State University. My academic background includes transport phenomena, reaction engineering, process modeling, materials characterization, and technical communication.</p>
-    <p>Through coursework and research projects, I have gained experience in ceramic processing, high-temperature porous materials, COMSOL-based modeling, experimental design, and data interpretation. My professional interests include process engineering, semiconductor manufacturing, materials research, and advanced manufacturing systems.</p>
+    <p>Through research and coursework, I have gained experience in ceramic processing, high-temperature porous materials, COMSOL-based simulation, Julia programming, ODE modeling, experimental design, and data interpretation. My professional interests include process engineering, semiconductor manufacturing, materials research, and advanced manufacturing systems.</p>
   </div>
 </section>
 <section id="projects">
@@ -57,7 +47,7 @@
       <img src="soec-powder.jpg" alt="SOEC ceramic powder preparation">
       <div class="content">
         <h3>SOEC Porous Ceramic Electrode Research</h3>
-        <p>Investigated gas permeability of high-temperature porous ceramic materials for SOEC applications. The project involved CMF powder synthesis, carbon pore-former optimization, ceramic processing, sintering, and material characterization.</p>
+        <p>Investigated gas permeability of high-temperature porous ceramic materials for SOEC applications. This research included CMF powder synthesis, carbon pore-former optimization, ceramic processing, sintering, and materials characterization.</p>
         <p class="small"><strong>Focus:</strong> Porous ceramics, gas permeability, SOEC electrode materials.</p>
         <div class="chips"><span class="chip">SEM</span><span class="chip">XRD</span><span class="chip">BET</span><span class="chip">Gas Permeability</span></div>
         <p><a href="SOEC_Research_Report.pdf">Research Report</a> · <a href="SOEC_Porous_Ceramics_Poster.pdf">Poster</a></p>
@@ -66,40 +56,31 @@
     <article class="project">
       <img src="microreactor-thumb.png" alt="COMSOL concentration distribution in microreactor">
       <div class="content">
-        <h3>Solid Catalyzed Reaction Processes</h3>
-        <p>Developed a mathematical and computational model for transport and reaction behavior in a wall-coated catalytic microreactor. The project included flow assumptions, governing equations, velocity profile derivation, mass transfer analysis, reaction kinetics, and COMSOL concentration distribution analysis.</p>
+        <h3>CHE 540 – Microreactor Modeling with COMSOL</h3>
+        <p>Developed a mathematical and computational model for transport and reaction behavior in a wall-coated catalytic microreactor. The project included governing equations, velocity-profile derivation, mass transfer analysis, reaction kinetics, and COMSOL concentration distribution analysis.</p>
         <p class="small"><strong>Focus:</strong> Transport modeling, catalytic surface reactions, COMSOL simulation.</p>
         <div class="chips"><span class="chip">COMSOL</span><span class="chip">Reaction Engineering</span><span class="chip">Transport Phenomena</span></div>
         <p><a href="Solid_Catalyzed_Reaction_Processes.pptx">Project Slides</a></p>
       </div>
     </article>
     <article class="project">
-      <img src="darcy-thumb.png" alt="SEM image used as porous structure reference">
+      <img src="lidocaine-single-dose.png" alt="Lidocaine two-compartment ODE simulation">
       <div class="content">
-        <h3>Darcy Flow in Porous Media</h3>
-        <p>Presented the fundamentals of Darcy flow and explained how pressure gradient, permeability, and viscosity control fluid movement through porous materials. The project connected fluid mechanics concepts to filtration, groundwater movement, and porous engineering systems.</p>
-        <p class="small"><strong>Focus:</strong> Porous media flow, permeability, engineering communication.</p>
-        <div class="chips"><span class="chip">Fluid Mechanics</span><span class="chip">Porous Media</span><span class="chip">Darcy's Law</span></div>
-        <p><a href="Darcy_Flow_in_Porous_Media.pptx">Project Slides</a></p>
+        <h3>CHE 525 – Lidocaine Dynamics Using Julia</h3>
+        <p>Developed a two-compartment pharmacokinetic model to simulate lidocaine movement between bloodstream and tissue compartments. The project used Julia to solve ODE systems and visualize drug concentration behavior over time.</p>
+        <p class="small"><strong>Focus:</strong> Julia programming, ODE systems, eigenvalue analysis, and pharmacokinetic simulation.</p>
+        <div class="chips"><span class="chip">Julia</span><span class="chip">ODE Modeling</span><span class="chip">Linear Algebra</span><span class="chip">Data Visualization</span></div>
+        <p><a href="Modeling_Lidocaine_Dynamics_Using_a_Two_Compartment_ODE_System.pptx">Project Slides</a></p>
       </div>
     </article>
   </div>
 </section>
 <section id="research">
-  <h2 class="section-title">SOEC Research Highlights</h2>
+  <h2 class="section-title">SOEC Research Results</h2>
   <div class="grid">
-    <article class="project">
-      <img src="soec-xrd.png" alt="XRD patterns of CMF-based ceramic materials">
-      <div class="content"><h3>XRD Analysis</h3><p>XRD was used to evaluate phase stability and crystal structure after sintering at 1250°C.</p></div>
-    </article>
-    <article class="project">
-      <img src="soec-sem.png" alt="SEM images of porous ceramic microstructure">
-      <div class="content"><h3>SEM Characterization</h3><p>SEM images were used to compare pore morphology, pore distribution, and microstructure development across different pore-former contents.</p></div>
-    </article>
-    <article class="project">
-      <img src="soec-gas-permeability.png" alt="Gas permeability graph">
-      <div class="content"><h3>Gas Permeability</h3><p>Gas permeability testing was used to compare transport performance between different carbon pore-forming materials.</p></div>
-    </article>
+    <article class="project"><img src="soec-xrd.png" alt="XRD patterns of CMF-based ceramic materials"><div class="content"><h3>XRD Analysis</h3><p>XRD was used to evaluate phase stability and crystal structure after sintering at 1250°C.</p></div></article>
+    <article class="project"><img src="soec-sem.png" alt="SEM images of porous ceramic microstructure"><div class="content"><h3>SEM Characterization</h3><p>SEM images were used to compare pore morphology, pore distribution, and microstructure development across different pore-former contents.</p></div></article>
+    <article class="project"><img src="soec-gas-permeability.png" alt="Gas permeability graph"><div class="content"><h3>Gas Permeability</h3><p>Gas permeability testing was used to compare transport performance between different carbon pore-forming materials.</p></div></article>
   </div>
 </section>
 <section>
@@ -111,13 +92,28 @@
     <div class="step"><img src="soec-final-sample.jpg" alt="Final ceramic sample"><div>Final Ceramic Sample</div></div>
   </div>
 </section>
+<section>
+  <h2 class="section-title">Computational Modeling Highlight</h2>
+  <div class="grid">
+    <article class="project"><img src="lidocaine-single-dose.png" alt="Single dose lidocaine simulation"><div class="content"><h3>Single-Dose Simulation</h3><p>The model tracks bloodstream and tissue amounts over time after a single injection, showing the exchange between central and peripheral compartments.</p></div></article>
+    <article class="project"><img src="lidocaine-dose-comparison.png" alt="Dose comparison lidocaine simulation"><div class="content"><h3>Dose Comparison</h3><p>Julia-generated simulations compared multiple initial doses and showed how peak bloodstream amount increases with dose magnitude.</p></div></article>
+  </div>
+</section>
+<section id="coursework">
+  <h2 class="section-title">Additional Coursework</h2>
+  <div class="card coursework">
+    <h3>CHE 514 – Darcy Flow in Porous Media</h3>
+    <p>Presented Darcy's Law and porous media flow concepts, including permeability, pressure gradients, viscosity effects, and engineering applications in filtration and groundwater transport.</p>
+    <p><a href="Darcy_Flow_in_Porous_Media.pptx">Project Slides</a></p>
+  </div>
+</section>
 <section id="skills">
   <h2 class="section-title">Skills</h2>
   <div class="card skills">
     <h3>Technical Tools</h3>
-    <span>COMSOL Multiphysics</span><span>Python</span><span>Excel</span><span>Mathematical Modeling</span><span>Data Analysis</span>
+    <span>COMSOL Multiphysics</span><span>Julia</span><span>Python</span><span>Excel</span><span>Mathematical Modeling</span><span>Data Analysis</span>
     <h3>Engineering Areas</h3>
-    <span>Transport Phenomena</span><span>Mass Transfer</span><span>Reaction Engineering</span><span>Fluid Mechanics</span><span>Process Analysis</span>
+    <span>Transport Phenomena</span><span>Mass Transfer</span><span>Reaction Engineering</span><span>Fluid Mechanics</span><span>Process Analysis</span><span>ODE Modeling</span>
     <h3>Materials & Characterization</h3>
     <span>Ceramic Processing</span><span>SEM</span><span>XRD</span><span>BET Surface Area</span><span>Gas Permeability Testing</span><span>High-Temperature Sintering</span>
   </div>

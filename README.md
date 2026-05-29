@@ -1,8 +1,11 @@
-# Ting-Wei Chen Portfolio Website
+Ting-Wei Chen Portfolio Website
 
-Files to upload to GitHub Pages:
-- index.html
-- all image files (.jpg/.png)
-- all PDF/PPTX documents
+Upload all files in this folder to the root of your GitHub repository.
+Do not upload the folder itself. Upload the files inside it.
 
-Important: upload the files inside this folder, not the folder itself.
+Featured projects:
+1. SOEC Porous Ceramic Electrode Research
+2. CHE 540 Microreactor Modeling with COMSOL
+3. CHE 525 Lidocaine Dynamics Using Julia
+
+Darcy Flow is included as Additional Coursework.
