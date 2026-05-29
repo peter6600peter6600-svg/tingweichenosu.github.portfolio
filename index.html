@@ -1,26 +1,270 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ting-Wei Chen Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ting-Wei Chen | Chemical Engineering Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #1f2933;
+      background: #f7f9fb;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a5f);
+      color: white;
+      padding: 80px 10%;
+      text-align: left;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      max-width: 700px;
+    }
+
+    nav {
+      background: white;
+      padding: 15px 10%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      margin-right: 25px;
+      text-decoration: none;
+      color: #1e3a5f;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 10%;
+    }
+
+    h2 {
+      color: #1e3a5f;
+      border-bottom: 3px solid #d97706;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .project-card div {
+      padding: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #1e3a5f;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 20px;
+      margin: 6px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Ting-Wei Chen</h1>
+<header>
+  <h1>Ting-Wei Chen</h1>
+  <p>Graduate Student in Chemical Engineering at Oregon State University</p>
+  <p>Modeling • Simulation • Materials Research • Process Engineering</p>
 
-<h2>Graduate Student in Chemical Engineering</h2>
+  <a class="button" href="Ting-Wei_Chen_Resume.pdf">Download Resume</a>
+  <a class="button" href="https://www.linkedin.com/in/tingweichenosu">LinkedIn</a>
+</header>
 
-<p>Email: peter6600peter6600@gmail.com</p>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/tingweichenosu">
-www.linkedin.com/in/tingweichenosu
-</a>
-</p>
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      Hello, my name is Ting-Wei Chen. I am a graduate student in Chemical Engineering at Oregon State University.
+      My academic background includes transport phenomena, reaction engineering, materials characterization,
+      process modeling, and simulation.
+    </p>
+    <p>
+      Through coursework and research projects, I have developed experience in experimental design,
+      ceramic processing, COMSOL modeling, data analysis, and technical communication. My professional interests
+      include process engineering, semiconductor manufacturing, materials research, and advanced manufacturing systems.
+    </p>
+  </div>
+</section>
 
-<p>GitHub Pages is working correctly.</p>
+<section id="projects">
+  <h2>Featured Projects</h2>
+
+  <div class="project-grid">
+
+    <div class="project-card">
+      <img src="soec-final-sample.jpg" alt="SOEC porous ceramic sample">
+      <div>
+        <h3>SOEC Porous Ceramic Electrode Research</h3>
+        <p>
+          Investigated gas permeability of high-temperature porous ceramic materials for SOEC applications.
+          This project involved CMF powder synthesis, carbon pore former optimization, sintering,
+          SEM, XRD, BET, and gas permeability testing.
+        </p>
+        <p><strong>Skills:</strong> SEM, XRD, BET, Ceramic Processing, Gas Permeability</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="microreactor-thumb.jpg" alt="Microreactor modeling">
+      <div>
+        <h3>Solid Catalyzed Reaction Processes</h3>
+        <p>
+          Developed a mathematical and computational model for transport and reaction behavior in a catalytic
+          microreactor. The project included Navier-Stokes simplification, velocity profile derivation,
+          reaction kinetics, and COMSOL-based analysis.
+        </p>
+        <p><strong>Skills:</strong> COMSOL, Reaction Engineering, Transport Phenomena</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="darcy-thumb.jpg" alt="Darcy flow in porous media">
+      <div>
+        <h3>Darcy Flow in Porous Media</h3>
+        <p>
+          Presented the fundamentals of Darcy flow and its application to fluid movement through porous materials.
+          The project connected permeability, pressure gradient, and engineering applications in filtration,
+          groundwater flow, and porous structures.
+        </p>
+        <p><strong>Skills:</strong> Fluid Mechanics, Porous Media Flow, Engineering Communication</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Research Highlights</h2>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="soec-xrd.png" alt="XRD analysis">
+      <div>
+        <h3>XRD Analysis</h3>
+        <p>XRD was used to evaluate phase stability after sintering at 1250°C.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="soec-sem.png" alt="SEM images">
+      <div>
+        <h3>SEM Characterization</h3>
+        <p>SEM images were used to observe pore structure and surface morphology.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="soec-permeability.png" alt="Gas permeability result">
+      <div>
+        <h3>Gas Permeability</h3>
+        <p>Gas permeability testing was used to compare transport performance across porous ceramic samples.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card skills">
+    <h3>Technical Skills</h3>
+    <span>COMSOL Multiphysics</span>
+    <span>Python</span>
+    <span>Excel</span>
+    <span>Mathematical Modeling</span>
+    <span>Data Analysis</span>
+
+    <h3>Engineering Skills</h3>
+    <span>Transport Phenomena</span>
+    <span>Reaction Engineering</span>
+    <span>Mass Transfer</span>
+    <span>Process Analysis</span>
+    <span>Fluid Mechanics</span>
+
+    <h3>Materials Characterization</h3>
+    <span>SEM</span>
+    <span>XRD</span>
+    <span>BET Surface Area</span>
+    <span>Gas Permeability Testing</span>
+    <span>Ceramic Processing</span>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p><strong>Email:</strong> peter6600peter6600@gmail.com</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tingweichenosu">www.linkedin.com/in/tingweichenosu</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ting-Wei Chen | Chemical Engineering Portfolio</p>
+</footer>
 
 </body>
 </html>
