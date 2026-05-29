@@ -1,186 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ting-Wei Chen | Chemical Engineering Portfolio</title>
-  <style>
-    :root{
-      --bg:#071724;
-      --panel:#0d2233;
-      --panel2:#102a3d;
-      --text:#f8fafc;
-      --muted:#b8c7d8;
-      --cyan:#67e8f9;
-      --green:#86efac;
-      --orange:#f59e0b;
-      --line:#1e3a4c;
-      --card:#0b1f30;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter, Arial, Helvetica, sans-serif;
-      background:
-        linear-gradient(rgba(103,232,249,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(103,232,249,.035) 1px, transparent 1px),
-        radial-gradient(circle at 75% 20%, rgba(34,211,238,.18), transparent 32%),
-        linear-gradient(135deg,#06131f,#082235 55%,#071724);
-      background-size:48px 48px,48px 48px,auto,auto;
-      color:var(--text);
-      line-height:1.65;
-    }
-    a{color:var(--cyan);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1220px;margin:auto;padding:0 28px}
-    nav{
-      position:sticky;top:18px;z-index:20;
-      margin:18px auto 0;
-      width:min(1180px,calc(100% - 36px));
-      background:rgba(8,24,37,.86);
-      border:1px solid rgba(103,232,249,.18);
-      backdrop-filter:blur(10px);
-      border-radius:999px;
-      padding:12px 18px;
-      display:flex;align-items:center;justify-content:space-between;gap:20px;
-      box-shadow:0 20px 50px rgba(0,0,0,.28);
-    }
-    .brand{display:flex;align-items:center;gap:14px;font-weight:800}
-    .logo{
-      width:44px;height:44px;border-radius:50%;
-      background:linear-gradient(135deg,#164e63,#67e8f9);
-      display:flex;align-items:center;justify-content:center;
-      color:white;font-weight:900;border:1px solid rgba(255,255,255,.25)
-    }
-    .links{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-    .links a{color:var(--muted);font-weight:800}
-    .links a:hover{color:var(--text);text-decoration:none}
-    .pill{
-      border:1px solid rgba(103,232,249,.22);
-      padding:10px 18px;border-radius:999px;color:var(--text)!important;
-      background:rgba(255,255,255,.04)
-    }
-    header{padding:95px 0 80px}
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-    .eyebrow{
-      color:var(--cyan);letter-spacing:.2em;text-transform:uppercase;
-      font-weight:900;font-size:.88rem;margin-bottom:22px
-    }
-    h1{
-      font-size:clamp(3.1rem,7vw,6.5rem);
-      line-height:.98;margin:0 0 22px;font-weight:950;letter-spacing:-.06em
-    }
-    .tagline{font-size:1.25rem;color:var(--muted);max-width:720px;margin:0 0 26px}
-    .focus{
-      display:inline-flex;gap:9px;align-items:center;
-      border:1px solid rgba(103,232,249,.18);
-      background:rgba(255,255,255,.035);
-      padding:12px 18px;border-radius:999px;color:var(--muted);font-weight:800
-    }
-    .focus strong{color:var(--green)}
-    .buttons{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
-    .btn{
-      display:inline-block;border-radius:999px;padding:14px 22px;
-      font-weight:900;color:var(--text);border:1px solid rgba(103,232,249,.22);
-      background:rgba(255,255,255,.06);box-shadow:0 12px 28px rgba(0,0,0,.2)
-    }
-    .btn.primary{background:linear-gradient(135deg,#5eead4,#67e8f9);color:#06202f;border:0}
-    .hero-card{
-      background:linear-gradient(145deg,rgba(16,42,61,.96),rgba(11,31,48,.96));
-      border:1px solid rgba(103,232,249,.20);
-      border-radius:30px;padding:24px;
-      box-shadow:0 28px 80px rgba(0,0,0,.35)
-    }
-    .hero-card img{
-      width:100%;height:360px;object-fit:cover;border-radius:22px;
-      border:1px solid rgba(255,255,255,.14)
-    }
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-    .stat{
-      background:rgba(2,13,22,.62);border:1px solid rgba(103,232,249,.12);
-      border-radius:18px;padding:22px
-    }
-    .stat strong{display:block;font-size:2rem;color:white}
-    .stat span{color:var(--muted);font-weight:700}
-    section{padding:68px 0}
-    .label{
-      color:var(--cyan);letter-spacing:.19em;text-transform:uppercase;
-      font-weight:950;font-size:.82rem;margin-bottom:12px
-    }
-    h2{font-size:clamp(2.2rem,4.5vw,4rem);line-height:1.05;margin:0 0 28px;letter-spacing:-.04em}
-    .panel{
-      background:rgba(13,34,51,.84);
-      border:1px solid rgba(103,232,249,.16);
-      border-radius:26px;padding:30px;
-      box-shadow:0 18px 60px rgba(0,0,0,.24)
-    }
-    .about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:28px}
-    .about-grid p{color:var(--muted);font-size:1.06rem}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .chip{
-      display:inline-block;border:1px solid rgba(103,232,249,.22);
-      background:rgba(103,232,249,.08);color:var(--text);
-      border-radius:999px;padding:8px 13px;font-weight:850
-    }
-    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .project{
-      background:rgba(13,34,51,.86);
-      border:1px solid rgba(103,232,249,.16);
-      border-radius:26px;overflow:hidden;
-      box-shadow:0 18px 60px rgba(0,0,0,.22)
-    }
-    .project img{width:100%;height:250px;object-fit:cover;background:#0b1f30}
-    .project .content{padding:25px}
-    .project h3{font-size:1.55rem;line-height:1.18;margin:0 0 12px}
-    .project p{color:var(--muted);margin:.4rem 0}
-    .small{font-size:.95rem}
-    .timeline-wrap{overflow-x:auto;padding-bottom:12px}
-    .timeline{
-      min-width:1000px;
-      display:grid;grid-template-columns:repeat(5,1fr);gap:22px;
-      position:relative;padding-top:28px
-    }
-    .timeline:before{
-      content:"";position:absolute;left:4%;right:4%;top:48px;height:3px;
-      background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-      opacity:.55
-    }
-    .time-card{
-      position:relative;background:rgba(13,34,51,.92);
-      border:1px solid rgba(103,232,249,.16);
-      border-radius:22px;padding:22px;margin-top:48px;min-height:230px
-    }
-    .time-card:before{
-      content:"";position:absolute;top:-58px;left:24px;width:20px;height:20px;
-      background:var(--cyan);border-radius:50%;box-shadow:0 0 0 10px rgba(103,232,249,.12)
-    }
-    .date{color:var(--cyan);font-weight:950;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}
-    .time-card h3{margin:10px 0;color:white;line-height:1.15}
-    .time-card p{color:var(--muted);margin:0}
-    .highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .highlight img{height:230px}
-    .workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .step{background:rgba(13,34,51,.86);border:1px solid rgba(103,232,249,.16);border-radius:20px;overflow:hidden}
-    .step img{width:100%;height:160px;object-fit:cover}
-    .step div{padding:16px;font-weight:900}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .course-item{
-      border-left:5px solid var(--orange);
-      background:rgba(13,34,51,.86);
-      border-radius:20px;padding:24px;border-top:1px solid rgba(103,232,249,.14)
-    }
-    .course-item p{color:var(--muted)}
-    footer{padding:42px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(103,232,249,.12)}
-    @media(max-width:950px){
-      nav{border-radius:24px;align-items:flex-start}.links{gap:12px}
-      .hero,.about-grid,.project-grid,.highlight-grid,.workflow,.split{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr}
-      .hero-card img{height:260px}
-      .project img{height:220px}
-      h1{font-size:3.4rem}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ting-Wei Chen | Chemical Engineering Portfolio</title>
+<style>
+:root{
+  --bg:#071723;
+  --bg2:#0a2234;
+  --card:#10293d;
+  --card2:#132f46;
+  --text:#f8fafc;
+  --muted:#a9bbcb;
+  --cyan:#67e8f9;
+  --mint:#86efac;
+  --orange:#f59e0b;
+  --line:rgba(103,232,249,.22);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  color:var(--text);
+  line-height:1.65;
+  background:
+    linear-gradient(rgba(103,232,249,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103,232,249,.04) 1px, transparent 1px),
+    radial-gradient(circle at 80% 15%, rgba(34,211,238,.22), transparent 35%),
+    radial-gradient(circle at 20% 70%, rgba(134,239,172,.12), transparent 32%),
+    linear-gradient(135deg,#06121d,#071b2a 55%,#071723);
+  background-size:48px 48px,48px 48px,auto,auto,auto;
+}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1240px;margin:auto;padding:0 28px}
+nav{
+  position:sticky;
+  top:16px;
+  z-index:99;
+  width:min(1180px,calc(100% - 36px));
+  margin:16px auto 0;
+  padding:12px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  background:rgba(7,23,35,.86);
+  border:1px solid var(--line);
+  border-radius:999px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 22px 55px rgba(0,0,0,.35);
+}
+.brand{display:flex;align-items:center;gap:14px;font-weight:900}
+.logo{
+  width:46px;height:46px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#164e63,#67e8f9);
+  color:white;font-weight:950;border:1px solid rgba(255,255,255,.25);
+}
+.links{display:flex;align-items:center;gap:21px;flex-wrap:wrap}
+.links a{font-weight:850;color:var(--muted)}
+.links a:hover{color:var(--text);text-decoration:none}
+.navbtn{
+  color:var(--text)!important;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+  padding:10px 18px;
+  border-radius:999px;
+}
+header{padding:96px 0 82px}
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:52px;
+  align-items:center;
+}
+.eyebrow{
+  color:var(--cyan);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:950;
+  font-size:.85rem;
+  margin-bottom:24px;
+}
+h1{
+  font-size:clamp(3.4rem,7vw,6.7rem);
+  line-height:.97;
+  letter-spacing:-.065em;
+  margin:0 0 24px;
+  font-weight:950;
+}
+.hero p{
+  color:var(--muted);
+  font-size:1.18rem;
+  max-width:720px;
+}
+.focus-pill{
+  display:inline-flex;
+  gap:9px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  border-radius:999px;
+  padding:11px 17px;
+  color:var(--muted);
+  font-weight:850;
+}
+.focus-pill strong{color:var(--mint)}
+.btnrow{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-block;
+  padding:14px 23px;
+  border-radius:999px;
+  font-weight:950;
+  color:var(--text);
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.055);
+  box-shadow:0 14px 30px rgba(0,0,0,.24);
+}
+.btn.primary{
+  background:linear-gradient(135deg,#5eead4,#67e8f9);
+  color:#061f2d;
+  border:0;
+}
+.hero-visual{
+  background:linear-gradient(145deg,rgba(19,47,70,.98),rgba(11,31,48,.98));
+  border:1px solid var(--line);
+  border-radius:34px;
+  padding:23px;
+  box-shadow:0 30px 90px rgba(0,0,0,.4);
+}
+.hero-visual img{
+  width:100%;
+  height:385px;
+  object-fit:cover;
+  border-radius:24px;
+  border:1px solid rgba(255,255,255,.15);
+}
+.statgrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:34px;
+}
+.stat{
+  background:rgba(2,13,22,.63);
+  border:1px solid rgba(103,232,249,.13);
+  border-radius:18px;
+  padding:23px;
+}
+.stat strong{display:block;font-size:2rem;color:#fff}
+.stat span{color:var(--muted);font-weight:750}
+section{padding:72px 0}
+.label{
+  color:var(--cyan);
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  font-size:.82rem;
+  font-weight:950;
+  margin-bottom:14px;
+}
+h2{
+  font-size:clamp(2.35rem,5vw,4.25rem);
+  line-height:1.04;
+  letter-spacing:-.045em;
+  margin:0 0 30px;
+}
+.panel{
+  background:rgba(16,41,61,.86);
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:32px;
+  box-shadow:0 22px 70px rgba(0,0,0,.25);
+}
+.aboutgrid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:30px;
+}
+.aboutgrid p{color:var(--muted);font-size:1.08rem}
+.icon-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.icon-card{
+  min-height:105px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border:1px solid rgba(103,232,249,.16);
+  background:rgba(255,255,255,.045);
+  border-radius:22px;
+  font-weight:950;
+  color:var(--text);
+}
+.icon-card span{font-size:1.85rem;color:var(--cyan);display:block}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.chip{
+  display:inline-block;
+  border:1px solid var(--line);
+  background:rgba(103,232,249,.08);
+  color:var(--text);
+  border-radius:999px;
+  padding:8px 13px;
+  font-weight:900;
+}
+.timeline-wrap{
+  overflow-x:auto;
+  padding-bottom:14px;
+}
+.timeline{
+  min-width:1050px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:24px;
+  position:relative;
+  padding-top:40px;
+}
+.timeline:before{
+  content:"";
+  position:absolute;
+  top:58px;
+  left:4%;
+  right:4%;
+  height:3px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:.62;
+}
+.time-card{
+  position:relative;
+  margin-top:48px;
+  min-height:230px;
+  padding:23px;
+  background:rgba(16,41,61,.95);
+  border:1px solid var(--line);
+  border-radius:24px;
+}
+.time-card:before{
+  content:"";
+  position:absolute;
+  top:-59px;
+  left:28px;
+  width:20px;height:20px;
+  background:var(--cyan);
+  border-radius:50%;
+  box-shadow:0 0 0 10px rgba(103,232,249,.12),0 0 30px rgba(103,232,249,.8);
+}
+.date{
+  color:var(--cyan);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:950;
+  font-size:.84rem;
+}
+.time-card h3{margin:10px 0;color:#fff;line-height:1.15}
+.time-card p{color:var(--muted);margin:0}
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.project{
+  background:rgba(16,41,61,.90);
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.28);
+  transition:.25s ease;
+}
+.project:hover{transform:translateY(-7px);border-color:rgba(103,232,249,.45)}
+.project img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  background:#0b1f30;
+}
+.project .content{padding:26px}
+.project h3{
+  font-size:1.55rem;
+  line-height:1.16;
+  margin:0 0 12px;
+}
+.project p{color:var(--muted);margin:.4rem 0}
+.small{font-size:.95rem}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.highlight img{height:235px}
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{
+  background:rgba(16,41,61,.90);
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+}
+.step img{width:100%;height:165px;object-fit:cover}
+.step div{padding:16px;font-weight:950}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.course-item{
+  background:rgba(16,41,61,.90);
+  border:1px solid var(--line);
+  border-left:6px solid var(--orange);
+  border-radius:22px;
+  padding:25px;
+}
+.course-item p{color:var(--muted)}
+footer{
+  padding:42px 0;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(103,232,249,.12);
+}
+@media(max-width:980px){
+  nav{border-radius:24px;align-items:flex-start}
+  .links{gap:11px}
+  .hero,.aboutgrid,.project-grid,.highlight-grid,.workflow,.split{grid-template-columns:1fr}
+  .statgrid{grid-template-columns:1fr}
+  .icon-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-visual img{height:280px}
+  h1{font-size:3.45rem}
+}
+</style>
 </head>
 
 <body>
@@ -192,34 +332,34 @@
     <a href="#projects">Projects</a>
     <a href="#research">Research</a>
     <a href="#skills">Skills</a>
-    <a class="pill" href="Ting-Wei_Chen_Resume.pdf">Resume</a>
-    <a class="pill" href="https://www.linkedin.com/in/tingweichenosu">LinkedIn</a>
+    <a class="navbtn" href="Ting-Wei_Chen_Resume.pdf">Resume</a>
+    <a class="navbtn" href="https://www.linkedin.com/in/tingweichenosu">LinkedIn</a>
   </div>
 </nav>
 
 <header>
   <div class="wrap hero">
     <div>
-      <div class="eyebrow">Chemical Engineering | Research | Modeling</div>
-      <h1>Turning engineering analysis into practical process insight.</h1>
-      <p class="tagline">
-        I am Ting-Wei Chen, a Chemical Engineering graduate student focused on porous ceramics,
-        transport phenomena, reaction engineering, and computational modeling.
+      <div class="eyebrow">Chemical Engineering | Materials Research | Modeling</div>
+      <h1>Building process insight through research and simulation.</h1>
+      <p>
+        I use chemical engineering fundamentals, materials characterization, and computational modeling
+        to understand transport behavior, reaction systems, and process performance.
       </p>
-      <div class="focus">Focused on <strong>research + simulation + process engineering</strong></div>
-      <div class="buttons">
+      <div class="focus-pill">Focused on <strong>porous materials + COMSOL + Julia modeling</strong></div>
+      <div class="btnrow">
         <a class="btn primary" href="#projects">Explore My Work</a>
         <a class="btn" href="Ting-Wei_Chen_Resume.pdf">Download Resume</a>
         <a class="btn" href="#contact">Let's Connect</a>
       </div>
-      <div class="stats">
+      <div class="statgrid">
         <div class="stat"><strong>3</strong><span>Featured technical projects</span></div>
-        <div class="stat"><strong>6+</strong><span>Core tools and methods</span></div>
-        <div class="stat"><strong>1</strong><span>Undergraduate research project</span></div>
+        <div class="stat"><strong>8+</strong><span>Engineering tools and methods</span></div>
+        <div class="stat"><strong>1</strong><span>Major undergraduate research project</span></div>
       </div>
     </div>
-    <div class="hero-card">
-      <img src="soec-tape-casting.jpg" alt="Tape casting process for ceramic materials">
+    <div class="hero-visual">
+      <img src="soec-tape-casting.jpg" alt="SOEC ceramic tape casting process">
     </div>
   </div>
 </header>
@@ -228,24 +368,34 @@
   <div class="wrap">
     <div class="label">About</div>
     <h2>Technical range with a chemical engineering foundation.</h2>
-    <div class="panel about-grid">
+    <div class="panel aboutgrid">
       <div>
         <p>
           My background combines chemical engineering coursework with hands-on materials research and computational modeling.
-          I have worked with porous ceramic electrode preparation, SEM/XRD characterization, COMSOL transport simulations,
-          and Julia-based ODE modeling.
+          I have worked with porous ceramic electrode preparation, SEM/XRD characterization, gas permeability testing,
+          COMSOL transport simulations, and Julia-based ODE modeling.
         </p>
         <p>
-          I am interested in projects where engineering fundamentals connect to real process improvement: analyzing transport behavior,
+          I enjoy projects where engineering fundamentals connect to real process improvement: analyzing transport behavior,
           improving material performance, modeling reaction systems, and communicating technical results clearly.
         </p>
-      </div>
-      <div>
         <div class="chips">
-          <span class="chip">COMSOL</span><span class="chip">Julia</span><span class="chip">Python</span>
-          <span class="chip">SEM</span><span class="chip">XRD</span><span class="chip">BET</span>
-          <span class="chip">Transport Phenomena</span><span class="chip">Reaction Engineering</span>
+          <span class="chip">Transport Phenomena</span>
+          <span class="chip">Reaction Engineering</span>
+          <span class="chip">Process Engineering</span>
+          <span class="chip">Materials Research</span>
         </div>
+      </div>
+      <div class="icon-grid">
+        <div class="icon-card"><div><span>⚙️</span>COMSOL</div></div>
+        <div class="icon-card"><div><span>∫</span>Julia</div></div>
+        <div class="icon-card"><div><span>Py</span>Python</div></div>
+        <div class="icon-card"><div><span>🔬</span>SEM</div></div>
+        <div class="icon-card"><div><span>◆</span>XRD</div></div>
+        <div class="icon-card"><div><span>📊</span>Data Analysis</div></div>
+        <div class="icon-card"><div><span>🧪</span>Ceramics</div></div>
+        <div class="icon-card"><div><span>ΔP</span>Permeability</div></div>
+        <div class="icon-card"><div><span>ODE</span>Modeling</div></div>
       </div>
     </div>
   </div>
@@ -274,12 +424,12 @@
         </div>
         <div class="time-card">
           <div class="date">Sept. 2025</div>
-          <h3>CHE 525 Computational Modeling</h3>
+          <h3>CHE 525 Julia Modeling</h3>
           <p>Used Julia to model lidocaine dynamics with a two-compartment ODE system.</p>
         </div>
         <div class="time-card">
           <div class="date">Dec. 2025 – Mar. 2026</div>
-          <h3>CHE 540 Microreactor Modeling</h3>
+          <h3>CHE 540 COMSOL Modeling</h3>
           <p>Modeled transport and reaction behavior in a catalytic microreactor using COMSOL.</p>
         </div>
       </div>
@@ -302,6 +452,7 @@
           <p><a href="SOEC_Research_Report.pdf">Research Report</a> · <a href="SOEC_Porous_Ceramics_Poster.pdf">Poster</a></p>
         </div>
       </article>
+
       <article class="project">
         <img src="microreactor-thumb.png" alt="COMSOL concentration distribution in catalytic microreactor">
         <div class="content">
@@ -312,6 +463,7 @@
           <p><a href="Solid_Catalyzed_Reaction_Processes.pptx">Project Slides</a></p>
         </div>
       </article>
+
       <article class="project">
         <img src="lidocaine-single-dose.png" alt="Lidocaine two-compartment ODE simulation">
         <div class="content">
@@ -416,9 +568,6 @@
   </div>
 </section>
 
-<footer>
-  © 2026 Ting-Wei Chen | Chemical Engineering Portfolio
-</footer>
-
+<footer>© 2026 Ting-Wei Chen | Chemical Engineering Portfolio</footer>
 </body>
 </html>
