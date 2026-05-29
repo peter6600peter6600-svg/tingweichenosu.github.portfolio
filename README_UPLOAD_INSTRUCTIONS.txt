@@ -1,13 +1,15 @@
-OSU Orange Portfolio Final
+OSU Dashboard Portfolio v4
 
-Theme:
-- Black / white / OSU orange (#D73F09)
-- Includes uploaded skill icons:
-  Julia, COMSOL, Python, Excel, SEM, XRD, Reaction Engineering, Transport Phenomena
+This version is redesigned to look closer to the dashboard-style reference:
+- Compact hero with SEM-style background
+- About + Technical Skills side-by-side
+- Larger skill icons, including a much larger cropped COMSOL icon
+- Featured Projects in a compact dashboard row
+- Academic & Research Journey timeline card
 
 Upload:
-1. Unzip this file.
-2. Upload all files inside the folder to your GitHub repository.
+1. Unzip.
+2. Upload all files inside the folder to GitHub.
 3. Replace existing files.
 4. Commit changes.
-5. Wait 1-2 minutes and refresh GitHub Pages.
+5. Wait 1–2 minutes and hard refresh your website.
