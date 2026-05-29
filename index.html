@@ -5,84 +5,342 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ting-Wei Chen | Chemical Engineering Portfolio</title>
   <style>
-    :root{--navy:#102a43;--blue:#1f4e79;--gold:#d97706;--bg:#f5f7fa;--text:#1f2933;--muted:#52606d;--card:#ffffff;}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65} a{color:var(--blue)}
-    header{background:linear-gradient(135deg,rgba(16,42,67,.96),rgba(31,78,121,.9)),url('soec-tape-casting.jpg') center/cover;color:white;padding:88px 8% 72px;}
-    .hero{max-width:1100px;margin:auto}.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:#fbbf24;font-weight:700;font-size:.85rem} h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;margin:.25rem 0}.subtitle{font-size:1.35rem;margin:.4rem 0}.tagline{color:#dbeafe;max-width:830px;font-size:1.05rem}.buttons{margin-top:28px}.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 20px;margin:6px 8px 6px 0;background:white;color:var(--navy)}.btn.alt{background:var(--gold);color:white}
-    nav{position:sticky;top:0;z-index:10;background:white;box-shadow:0 2px 14px rgba(16,42,67,.12);padding:14px 8%;text-align:center} nav a{text-decoration:none;color:var(--navy);font-weight:700;margin:0 14px;white-space:nowrap}
-    section{padding:58px 8%;max-width:1250px;margin:auto}.section-title{font-size:2rem;color:var(--navy);margin:0 0 26px}.section-title:after{content:"";display:block;width:92px;border-bottom:4px solid var(--gold);margin-top:8px}
-    .card{background:var(--card);border-radius:18px;box-shadow:0 10px 28px rgba(16,42,67,.08);padding:28px;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}.project{background:white;border-radius:18px;box-shadow:0 10px 28px rgba(16,42,67,.08);overflow:hidden;display:flex;flex-direction:column}.project img{width:100%;height:235px;object-fit:cover;background:#e5e7eb}.project .content{padding:24px;display:flex;flex-direction:column;gap:8px;flex:1}.project h3{margin:.2rem 0;color:var(--navy);font-size:1.35rem}.project p{margin:.35rem 0}.small{color:var(--muted);font-size:.95rem}.chips{margin-top:10px}.chip{display:inline-block;background:#e8f1f8;color:#173b57;border-radius:999px;padding:6px 10px;margin:4px;font-size:.9rem;font-weight:700}
-    .workflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}.step{background:white;border-radius:14px;box-shadow:0 6px 18px rgba(16,42,67,.08);overflow:hidden}.step img{width:100%;height:150px;object-fit:cover}.step div{padding:14px;font-weight:700;color:var(--navy)}.skills span{display:inline-block;background:#e2e8f0;color:var(--navy);padding:8px 13px;border-radius:999px;margin:6px;font-weight:700}.coursework{border-left:5px solid var(--gold)}footer{background:#0b1f33;color:#cbd5e1;text-align:center;padding:34px 8%;margin-top:45px}
-    @media(max-width:700px){nav a{display:inline-block;margin:5px 8px}section{padding:42px 5%}header{padding:65px 5%}.project img{height:210px}}
+    :root{
+      --navy:#0f2742;
+      --blue:#1e4f7a;
+      --light-blue:#eaf3fb;
+      --gold:#d97706;
+      --bg:#f6f8fb;
+      --text:#1f2933;
+      --muted:#52606d;
+      --card:#ffffff;
+      --line:#dbe4ee;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    a{color:var(--blue)}
+    header{
+      background:
+        linear-gradient(135deg,rgba(15,39,66,.97),rgba(30,79,122,.88)),
+        url('soec-tape-casting.jpg') center/cover;
+      color:white;
+      padding:95px 8% 80px;
+    }
+    .hero{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.25fr .75fr;gap:38px;align-items:center}
+    .eyebrow{letter-spacing:.14em;text-transform:uppercase;color:#fbbf24;font-weight:700;font-size:.86rem}
+    h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;margin:.25rem 0}
+    .subtitle{font-size:1.35rem;margin:.5rem 0;color:#eef6ff}
+    .tagline{color:#dbeafe;max-width:760px;font-size:1.08rem}
+    .hero-card{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:24px;
+      padding:26px;
+      backdrop-filter:blur(6px);
+    }
+    .hero-stat{border-bottom:1px solid rgba(255,255,255,.2);padding:12px 0}
+    .hero-stat:last-child{border-bottom:0}
+    .hero-stat strong{display:block;color:#fff;font-size:1.2rem}
+    .hero-stat span{color:#dbeafe;font-size:.95rem}
+    .buttons{margin-top:28px}
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:700;
+      border-radius:999px;
+      padding:12px 20px;
+      margin:6px 8px 6px 0;
+      background:white;
+      color:var(--navy);
+      box-shadow:0 6px 18px rgba(0,0,0,.18);
+    }
+    .btn.alt{background:var(--gold);color:white}
+    nav{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:white;
+      box-shadow:0 2px 14px rgba(16,42,67,.12);
+      padding:14px 8%;
+      text-align:center;
+    }
+    nav a{
+      text-decoration:none;
+      color:var(--navy);
+      font-weight:700;
+      margin:0 14px;
+      white-space:nowrap;
+    }
+    section{
+      padding:58px 8%;
+      max-width:1250px;
+      margin:auto;
+    }
+    .section-title{
+      font-size:2rem;
+      color:var(--navy);
+      margin:0 0 26px;
+    }
+    .section-title:after{
+      content:"";
+      display:block;
+      width:92px;
+      border-bottom:4px solid var(--gold);
+      margin-top:8px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:0 10px 28px rgba(16,42,67,.08);
+      padding:28px;
+      margin:18px 0;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+      gap:26px;
+    }
+    .project{
+      background:white;
+      border-radius:20px;
+      box-shadow:0 12px 30px rgba(16,42,67,.09);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      border:1px solid rgba(16,42,67,.06);
+    }
+    .project img{
+      width:100%;
+      height:245px;
+      object-fit:cover;
+      background:#e5e7eb;
+    }
+    .project .content{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      flex:1;
+    }
+    .project h3{
+      margin:.2rem 0;
+      color:var(--navy);
+      font-size:1.35rem;
+    }
+    .project p{margin:.35rem 0}
+    .small{color:var(--muted);font-size:.95rem}
+    .chips{margin-top:10px}
+    .chip{
+      display:inline-block;
+      background:#e8f1f8;
+      color:#173b57;
+      border-radius:999px;
+      padding:6px 10px;
+      margin:4px;
+      font-size:.9rem;
+      font-weight:700;
+    }
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+      align-items:start;
+    }
+    .workflow{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:18px;
+    }
+    .step{
+      background:white;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(16,42,67,.08);
+      overflow:hidden;
+    }
+    .step img{width:100%;height:150px;object-fit:cover}
+    .step div{padding:14px;font-weight:700;color:var(--navy)}
+    .skills span{
+      display:inline-block;
+      background:#e2e8f0;
+      color:var(--navy);
+      padding:8px 13px;
+      border-radius:999px;
+      margin:6px;
+      font-weight:700;
+    }
+    .coursework{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    .course-item{
+      border-left:5px solid var(--gold);
+      background:white;
+      border-radius:14px;
+      padding:22px 24px;
+      box-shadow:0 8px 24px rgba(16,42,67,.07);
+    }
+    .course-item h3{margin-top:0;color:var(--navy)}
+    footer{
+      background:#0b1f33;
+      color:#cbd5e1;
+      text-align:center;
+      padding:34px 8%;
+      margin-top:45px;
+    }
+    @media(max-width:850px){
+      .hero{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      nav a{display:inline-block;margin:5px 8px}
+      section{padding:42px 5%}
+      header{padding:65px 5%}
+      .project img{height:210px}
+    }
   </style>
 </head>
+
 <body>
 <header>
   <div class="hero">
-    <div class="eyebrow">Chemical Engineering Portfolio</div>
-    <h1>Ting-Wei Chen</h1>
-    <p class="subtitle">Graduate Student in Chemical Engineering | Oregon State University</p>
-    <p class="tagline">Focused on porous ceramics, transport phenomena, reaction engineering, computational modeling, and data-driven engineering analysis.</p>
-    <div class="buttons">
-      <a class="btn alt" href="#projects">View Projects</a>
-      <a class="btn" href="Ting-Wei_Chen_Resume.pdf">Download Resume</a>
-      <a class="btn" href="https://www.linkedin.com/in/tingweichenosu">LinkedIn</a>
+    <div>
+      <div class="eyebrow">Chemical Engineering Portfolio</div>
+      <h1>Ting-Wei Chen</h1>
+      <p class="subtitle">Graduate Student in Chemical Engineering | Oregon State University</p>
+      <p class="tagline">
+        Focused on process engineering, transport phenomena, materials research, microreactor modeling, and computational engineering analysis.
+      </p>
+      <div class="buttons">
+        <a class="btn alt" href="#projects">View Projects</a>
+        <a class="btn" href="Ting-Wei_Chen_Resume.pdf">Download Resume</a>
+        <a class="btn" href="https://www.linkedin.com/in/tingweichenosu">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-stat"><strong>Research + Modeling</strong><span>Porous ceramics, COMSOL, and Julia-based ODE simulation</span></div>
+      <div class="hero-stat"><strong>Core Interests</strong><span>Transport phenomena, reaction engineering, and process optimization</span></div>
+      <div class="hero-stat"><strong>Technical Focus</strong><span>Materials characterization, numerical modeling, and engineering communication</span></div>
     </div>
   </div>
 </header>
+
 <nav>
-  <a href="#about">About</a><a href="#projects">Projects</a><a href="#research">SOEC Results</a><a href="#coursework">Coursework</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#research">SOEC Highlights</a>
+  <a href="#coursework">Coursework</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
 </nav>
+
 <section id="about">
   <h2 class="section-title">About Me</h2>
   <div class="card">
-    <p>Hello, my name is <strong>Ting-Wei Chen</strong>. I am a graduate student in Chemical Engineering at Oregon State University. My academic background includes transport phenomena, reaction engineering, process modeling, materials characterization, and technical communication.</p>
-    <p>Through research and coursework, I have gained experience in ceramic processing, high-temperature porous materials, COMSOL-based simulation, Julia programming, ODE modeling, experimental design, and data interpretation. My professional interests include process engineering, semiconductor manufacturing, materials research, and advanced manufacturing systems.</p>
+    <p>
+      Hello, my name is <strong>Ting-Wei Chen</strong>. I am a graduate student in Chemical Engineering at Oregon State University.
+      My academic background includes transport phenomena, reaction engineering, process modeling, materials characterization, and technical communication.
+    </p>
+    <p>
+      Through research and coursework, I have gained experience in ceramic processing, high-temperature porous materials,
+      COMSOL-based simulation, Julia programming, experimental design, and data interpretation. My professional interests include
+      process engineering, semiconductor manufacturing, materials research, and advanced manufacturing systems.
+    </p>
   </div>
 </section>
+
 <section id="projects">
   <h2 class="section-title">Featured Projects</h2>
   <div class="grid">
+
     <article class="project">
       <img src="soec-powder.jpg" alt="SOEC ceramic powder preparation">
       <div class="content">
         <h3>SOEC Porous Ceramic Electrode Research</h3>
-        <p>Investigated gas permeability of high-temperature porous ceramic materials for SOEC applications. This research included CMF powder synthesis, carbon pore-former optimization, ceramic processing, sintering, and materials characterization.</p>
+        <p>
+          Investigated gas permeability of high-temperature porous ceramic materials for SOEC applications. The project involved CMF powder synthesis,
+          carbon pore-former optimization, ceramic processing, sintering, and materials characterization.
+        </p>
         <p class="small"><strong>Focus:</strong> Porous ceramics, gas permeability, SOEC electrode materials.</p>
-        <div class="chips"><span class="chip">SEM</span><span class="chip">XRD</span><span class="chip">BET</span><span class="chip">Gas Permeability</span></div>
+        <div class="chips">
+          <span class="chip">SEM</span><span class="chip">XRD</span><span class="chip">BET</span><span class="chip">Gas Permeability</span>
+        </div>
         <p><a href="SOEC_Research_Report.pdf">Research Report</a> · <a href="SOEC_Porous_Ceramics_Poster.pdf">Poster</a></p>
       </div>
     </article>
+
     <article class="project">
-      <img src="microreactor-thumb.png" alt="COMSOL concentration distribution in microreactor">
+      <img src="microreactor-thumb.png" alt="COMSOL concentration distribution in catalytic microreactor">
       <div class="content">
         <h3>CHE 540 – Microreactor Modeling with COMSOL</h3>
-        <p>Developed a mathematical and computational model for transport and reaction behavior in a wall-coated catalytic microreactor. The project included governing equations, velocity-profile derivation, mass transfer analysis, reaction kinetics, and COMSOL concentration distribution analysis.</p>
+        <p>
+          Developed a mathematical and computational model for transport and reaction behavior in a wall-coated catalytic microreactor.
+          The project included governing equations, velocity profile derivation, mass transfer analysis, reaction kinetics, and COMSOL concentration distribution analysis.
+        </p>
         <p class="small"><strong>Focus:</strong> Transport modeling, catalytic surface reactions, COMSOL simulation.</p>
-        <div class="chips"><span class="chip">COMSOL</span><span class="chip">Reaction Engineering</span><span class="chip">Transport Phenomena</span></div>
+        <div class="chips">
+          <span class="chip">COMSOL</span><span class="chip">Reaction Engineering</span><span class="chip">Transport Phenomena</span>
+        </div>
         <p><a href="Solid_Catalyzed_Reaction_Processes.pptx">Project Slides</a></p>
       </div>
     </article>
+
     <article class="project">
       <img src="lidocaine-single-dose.png" alt="Lidocaine two-compartment ODE simulation">
       <div class="content">
         <h3>CHE 525 – Lidocaine Dynamics Using Julia</h3>
-        <p>Developed a two-compartment pharmacokinetic model to simulate lidocaine movement between bloodstream and tissue compartments. The project used Julia to solve ODE systems and visualize drug concentration behavior over time.</p>
-        <p class="small"><strong>Focus:</strong> Julia programming, ODE systems, eigenvalue analysis, and pharmacokinetic simulation.</p>
-        <div class="chips"><span class="chip">Julia</span><span class="chip">ODE Modeling</span><span class="chip">Linear Algebra</span><span class="chip">Data Visualization</span></div>
-        <p><a href="Modeling_Lidocaine_Dynamics_Using_a_Two_Compartment_ODE_System.pptx">Project Slides</a></p>
+        <p>
+          Developed a two-compartment pharmacokinetic model using Julia to simulate lidocaine movement between bloodstream and tissue compartments.
+          The project applied ordinary differential equations, eigenvalue analysis, matrix exponential methods, and data visualization.
+        </p>
+        <p class="small"><strong>Focus:</strong> Julia programming, ODE systems, linear algebra, and pharmacokinetic modeling.</p>
+        <div class="chips">
+          <span class="chip">Julia</span><span class="chip">ODE Modeling</span><span class="chip">Linear Algebra</span><span class="chip">Data Visualization</span>
+        </div>
+        <p><a href="Modeling Lidocaine Dynamics Using a Two-Compartment ODE System.pptx">Project Slides</a></p>
       </div>
     </article>
+
   </div>
 </section>
+
 <section id="research">
-  <h2 class="section-title">SOEC Research Results</h2>
+  <h2 class="section-title">SOEC Research Highlights</h2>
   <div class="grid">
-    <article class="project"><img src="soec-xrd.png" alt="XRD patterns of CMF-based ceramic materials"><div class="content"><h3>XRD Analysis</h3><p>XRD was used to evaluate phase stability and crystal structure after sintering at 1250°C.</p></div></article>
-    <article class="project"><img src="soec-sem.png" alt="SEM images of porous ceramic microstructure"><div class="content"><h3>SEM Characterization</h3><p>SEM images were used to compare pore morphology, pore distribution, and microstructure development across different pore-former contents.</p></div></article>
-    <article class="project"><img src="soec-gas-permeability.png" alt="Gas permeability graph"><div class="content"><h3>Gas Permeability</h3><p>Gas permeability testing was used to compare transport performance between different carbon pore-forming materials.</p></div></article>
+
+    <article class="project">
+      <img src="soec-xrd.png" alt="XRD patterns of CMF-based ceramic materials">
+      <div class="content">
+        <h3>XRD Analysis</h3>
+        <p>XRD was used to evaluate phase stability and crystal structure after sintering at 1250°C.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="soec-sem.png" alt="SEM images of porous ceramic microstructure">
+      <div class="content">
+        <h3>SEM Characterization</h3>
+        <p>SEM images were used to compare pore morphology, pore distribution, and microstructure development across different pore-former contents.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <img src="soec-gas-permeability.png" alt="Gas permeability graph">
+      <div class="content">
+        <h3>Gas Permeability</h3>
+        <p>Gas permeability testing was used to compare transport performance between different carbon pore-forming materials.</p>
+      </div>
+    </article>
+
   </div>
 </section>
+
 <section>
   <h2 class="section-title">Experimental Workflow</h2>
   <div class="workflow">
@@ -92,32 +350,55 @@
     <div class="step"><img src="soec-final-sample.jpg" alt="Final ceramic sample"><div>Final Ceramic Sample</div></div>
   </div>
 </section>
+
 <section>
-  <h2 class="section-title">Computational Modeling Highlight</h2>
-  <div class="grid">
-    <article class="project"><img src="lidocaine-single-dose.png" alt="Single dose lidocaine simulation"><div class="content"><h3>Single-Dose Simulation</h3><p>The model tracks bloodstream and tissue amounts over time after a single injection, showing the exchange between central and peripheral compartments.</p></div></article>
-    <article class="project"><img src="lidocaine-dose-comparison.png" alt="Dose comparison lidocaine simulation"><div class="content"><h3>Dose Comparison</h3><p>Julia-generated simulations compared multiple initial doses and showed how peak bloodstream amount increases with dose magnitude.</p></div></article>
+  <h2 class="section-title">CHE 525 Simulation Results</h2>
+  <div class="split">
+    <article class="project">
+      <img src="lidocaine-single-dose.png" alt="Single dose lidocaine simulation">
+      <div class="content">
+        <h3>Single-Dose Simulation</h3>
+        <p>Julia simulation showing bloodstream and tissue amounts over time after a single injection.</p>
+      </div>
+    </article>
+    <article class="project">
+      <img src="lidocaine-dose-comparison.png" alt="Lidocaine dose comparison simulation">
+      <div class="content">
+        <h3>Dose Comparison</h3>
+        <p>Comparison of bloodstream concentration curves under different initial doses.</p>
+      </div>
+    </article>
   </div>
 </section>
+
 <section id="coursework">
   <h2 class="section-title">Additional Coursework</h2>
-  <div class="card coursework">
-    <h3>CHE 514 – Darcy Flow in Porous Media</h3>
-    <p>Presented Darcy's Law and porous media flow concepts, including permeability, pressure gradients, viscosity effects, and engineering applications in filtration and groundwater transport.</p>
-    <p><a href="Darcy_Flow_in_Porous_Media.pptx">Project Slides</a></p>
+  <div class="coursework">
+    <div class="course-item">
+      <h3>CHE 514 – Darcy Flow in Porous Media</h3>
+      <p>
+        Presented Darcy's Law and porous media flow concepts, including permeability, pressure gradients, viscosity effects,
+        and engineering applications in filtration and groundwater transport.
+      </p>
+      <p><a href="Darcy_Flow_in_Porous_Media.pptx">Project Slides</a></p>
+    </div>
   </div>
 </section>
+
 <section id="skills">
   <h2 class="section-title">Skills</h2>
   <div class="card skills">
     <h3>Technical Tools</h3>
     <span>COMSOL Multiphysics</span><span>Julia</span><span>Python</span><span>Excel</span><span>Mathematical Modeling</span><span>Data Analysis</span>
+
     <h3>Engineering Areas</h3>
     <span>Transport Phenomena</span><span>Mass Transfer</span><span>Reaction Engineering</span><span>Fluid Mechanics</span><span>Process Analysis</span><span>ODE Modeling</span>
+
     <h3>Materials & Characterization</h3>
     <span>Ceramic Processing</span><span>SEM</span><span>XRD</span><span>BET Surface Area</span><span>Gas Permeability Testing</span><span>High-Temperature Sintering</span>
   </div>
 </section>
+
 <section id="contact">
   <h2 class="section-title">Contact</h2>
   <div class="card">
@@ -125,6 +406,7 @@
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tingweichenosu">www.linkedin.com/in/tingweichenosu</a></p>
   </div>
 </section>
+
 <footer>© 2026 Ting-Wei Chen | Chemical Engineering Portfolio</footer>
 </body>
 </html>
